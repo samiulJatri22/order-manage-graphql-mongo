@@ -1,7 +1,6 @@
-import { ObjectType, Field} from '@nestjs/graphql';
-import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
-import {ID} from '@nestjs/graphql'
-import {Document} from 'mongoose'
+import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
 export type ConsumerDocument = Consumer & Document;
 
@@ -9,15 +8,15 @@ export type ConsumerDocument = Consumer & Document;
 @Schema()
 export class Consumer {
   @Field(() => ID)
-  id:string;
+  id: string;
 
   @Field()
-  @Prop({required: true})
-  email:string;
+  @Prop({ required: true })
+  email: string;
 
   @Field()
-  @Prop({default:0, required:false})
-  balance:number;
+  @Prop({ default: 0, required: false })
+  balance: number;
 }
 
 export const ConsumerSchema = SchemaFactory.createForClass(Consumer)

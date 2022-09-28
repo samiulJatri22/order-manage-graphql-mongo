@@ -1,12 +1,12 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { ConsumerService } from './consumer.service';
-import { Consumer } from './entities/consumer.entity';
 import { CreateConsumerInput } from './dto/create-consumer.input';
 import { UpdateConsumerInput } from './dto/update-consumer.input';
+import { Consumer } from './entities/consumer.entity';
 
 @Resolver(() => Consumer)
 export class ConsumerResolver {
-  constructor(private readonly consumerService: ConsumerService) {}
+  constructor(private readonly consumerService: ConsumerService) { }
 
   @Mutation(() => Consumer)
   async createConsumer(@Args('createConsumerInput') createConsumerInput: CreateConsumerInput) {
