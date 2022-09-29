@@ -17,8 +17,6 @@ describe('Consumer Service', () => {
                 {
                     provide: getModelToken(Consumer.name),
                     useValue: {
-                        new: jest.fn().mockResolvedValue(createConsumer),
-                        constructor: jest.fn().mockResolvedValue(createConsumer),
                         find: jest.fn(),
                         findById: jest.fn(),
                         create: jest.fn(),

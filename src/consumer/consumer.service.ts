@@ -10,7 +10,7 @@ export class ConsumerService {
 
   constructor(
     @InjectModel(Consumer.name)
-    private consumerModel: Model<ConsumerDocument>
+    public consumerModel: Model<ConsumerDocument>
   ) { }
 
   async create(createConsumerInput: CreateConsumerInput) {
